@@ -1,0 +1,863 @@
+{
+  "common": {
+    "welcome": "Welcome",
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "editProfile": "Edit Profile",
+    "create": "Create",
+    "update": "Update",
+    "search": "Search",
+    "filter": "Filter",
+    "loading": "Loading...",
+    "noData": "No data found",
+    "close": "Close",
+    "submit": "Submit",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "confirm": "Confirm",
+    "yes": "Yes",
+    "no": "No",
+    "more": "more",
+    "openSidebar": "Open sidebar",
+    "editRole": "Edit Role",
+    "updateRole": "Update Role",
+    "optional": "optional"
+  },
+  "auth": {
+    "email": "Email Address",
+    "password": "Password",
+    "name": "Full Name",
+    "forgotPassword": "Forgot Password?",
+    "rememberMe": "Remember Me",
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "createAccount": "Create Account",
+    "getStarted": "Get started with SecuroSense",
+    "nameArPlaceholder": "e.g. محمد أحمد",
+    "processing": "Processing...",
+    "alreadyHaveAccount": "Already have an account?",
+    "dontHaveAccount": "Don't have an account?",
+    "invalidCredentials": "Invalid credentials",
+    "loginSuccess": "Login successful"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "sales": "Sales Dashboard",
+    "analytics": "Analytics",
+    "calls": "Calls",
+    "teams": "Teams",
+    "users": "Users",
+    "settings": "Settings"
+  },
+  "sales": {
+    "overview": "Overview of Sales performance and metrics",
+    "selectOrganization": "Select Organization",
+    "allOrganizations": "All Organizations",
+    "totalRevenue": "Total Revenue",
+    "dealsClosed": "deals closed",
+    "revenueDistribution": "Revenue Distribution",
+    "teamPerformance": "Team Performance",
+    "noTeamData": "No team performance data available",
+    "tabs": {
+      "overview": "Overview",
+      "team": "Team Performance",
+      "distribution": "Revenue Distribution"
+    },
+    "datePresets": {
+      "all": "All time",
+      "last7Days": "Last 7 days",
+      "last30Days": "Last 30 days",
+      "monthToDate": "Month to date",
+      "custom": "Custom"
+    },
+    "controls": {
+      "dateRange": "Date range",
+      "start": "Start",
+      "end": "End",
+      "apply": "Apply",
+      "refresh": "Refresh"
+    }
+  },
+  "organization": {
+    "businessInfo": "Business Information",
+    "name": "Name",
+    "industry": "Industry",
+    "size": "Size",
+    "email": "Email",
+    "phone": "Phone",
+    "website": "Website",
+    "address": "Address",
+    "city": "City",
+    "country": "Country",
+    "state": "State",
+    "postalCode": "Postal Code",
+    "description": "Description",
+    "foundedYear": "Founded Year",
+    "management": "Organization Management",
+    "managementDesc": "Manage organizations and create admin users",
+    "createOrganization": "Create Organization",
+    "createOrganizationDesc": "Add a new organization to the platform",
+    "create": "Create",
+    "viewDetails": "View Details",
+    "permissions": "Permissions",
+    "admin": "Admin",
+    "organizationDetails": "Organization Details",
+    "basicInfo": "Basic Information",
+    "contactInfo": "Contact Information",
+    "additionalInfo": "Additional Information",
+    "addressInfo": "Address Information",
+    "legalInfo": "Legal & Registration",
+    "accountInfo": "Account Information",
+    "statistics": "Statistics",
+    "users": "Users",
+    "teams": "Teams",
+    "calls": "Calls",
+    "profileDesc": "View and manage your business profile information",
+    "timezone": "Timezone",
+    "taxId": "Tax ID / VAT Number",
+    "registrationNumber": "Registration Number",
+    "adminName": "Admin Name",
+    "adminEmail": "Admin Email",
+    "createdAt": "Created At",
+    "updatedAt": "Last Updated",
+    "noInfo": "No business information available"
+  },
+  "team": {
+    "title": "Team Management",
+    "createTeam": "Create Team",
+    "teamName": "Team Name",
+    "addAgent": "Add Agent",
+    "agents": "Agents",
+    "noTeams": "No teams created yet",
+    "createFirstTeam": "Create your first team"
+  },
+  "role": {
+    "title": "Role Management",
+    "subtitle": "Define what your team members can see and do.",
+    "createRole": "Create Role",
+    "addRole": "Add Role",
+    "editRole": "Edit Role",
+    "roleName": "Role Name",
+    "roleId": "Role ID",
+    "description": "Description",
+    "permissions": "Permissions",
+    "systemRole": "System Role",
+    "users": "Users",
+    "user": "User",
+    "noDescription": "No description provided.",
+    "noRoles": "No custom roles created yet",
+    "createFirstRole": "Create your first role",
+    "more": "more",
+    "createNewRole": "Create New Role",
+    "editRoleTitle": "Edit Role",
+    "roleDescription": "Roles define what actions users can perform in the system.",
+    "targetOrganization": "Target Organization",
+    "systemRoleGlobal": "System Role (Available to All Organizations)",
+    "orgSpecificRole": "Select an organization to create an org-specific role, or leave as \"System Role\" for a global role.",
+    "rolePermissions": "Role Permissions",
+    "selectPermissions": "Select the specific permissions this role should have. Users assigned to this role will inherit all selected capabilities.",
+    "selectedPermissions": "Selected Permissions",
+    "updateRole": "Update Role",
+    "createRoleNow": "Create Role Now",
+    "permissionNames": {
+      "VIEW_CALLS": "View Calls",
+      "ANALYZE_CALLS": "Analyze Calls",
+      "DELETE_CALLS": "Delete Calls",
+      "DOWNLOAD_REPORTS": "Download Reports",
+      "VIEW_TEAMS": "View Teams",
+      "MANAGE_TEAMS": "Manage Teams",
+      "VIEW_ANALYTICS": "View Analytics",
+      "VIEW_QA_TEMPLATES": "View QA Templates",
+      "MANAGE_QA_TEMPLATES": "Manage QA Templates",
+      "MANAGE_USERS": "Manage Users",
+      "MANAGE_ROLES": "Manage Roles",
+      "MANAGE_ORGANIZATIONS": "Manage Organizations",
+      "VIEW_PROMISES": "View Promises",
+      "MANAGE_PROMISES": "Manage Promises",
+      "VIEW_BENCHMARKING": "View Benchmarking"
+    }
+  },
+  "qa": {
+    "title": "QA Parameters",
+    "createParameter": "Create Parameter",
+    "parameterName": "Parameter Name",
+    "category": "Category",
+    "weight": "Weight",
+    "noParameters": "No parameters found"
+  },
+  "onboarding": {
+    "title": "Onboarding",
+    "welcome": "Welcome to SecuroSense",
+    "setupDescription": "Let's set up your workspace in just a few steps.",
+    "step1": "Business Information",
+    "step1Title": "Step 1: Business Profile",
+    "step2": "Team Setup",
+    "step2Title": "Step 2: Create Teams",
+    "step2Description": "Add the teams that will be using the platform (e.g., Sales, Support).",
+    "step3": "Review",
+    "step3Title": "Step 3: Review",
+    "organizationName": "Organization Name",
+    "organizationNameAr": "Name (Arabic) optional",
+    "organizationNameArPlaceholder": "الاسم بالعربية",
+    "industry": "Industry",
+    "industryAr": "Industry (Arabic) optional",
+    "size": "Organization Size",
+    "sizeAr": "Size (Arabic) optional",
+    "selectIndustry": "Select Industry",
+    "companySize": "Company Size",
+    "businessEmail": "Business Email",
+    "phoneNumber": "Phone Number",
+    "website": "Website",
+    "country": "Country",
+    "countryAr": "Country (Arabic)",
+    "city": "City",
+    "cityAr": "City (Arabic)",
+    "description": "Business Description",
+    "descriptionAr": "Description (Arabic) optional",
+    "descriptionArPlaceholder": "الوصف بالعربية",
+    "nextTeams": "Next: Add Teams",
+    "nextReview": "Next: Review",
+    "back": "Back",
+    "addTeam": "Add Team",
+    "addAnotherTeam": "+ Add Another Team",
+    "completeSetup": "Complete Setup",
+    "settingUp": "Setting up...",
+    "reviewOrg": "Organization",
+    "reviewTeams": "Teams to Create",
+    "industries": {
+      "insurance": "Insurance",
+      "banking": "Banking",
+      "retail": "Retail",
+      "healthcare": "Healthcare",
+      "technology": "Technology",
+      "finance": "Finance",
+      "realEstate": "Real Estate",
+      "education": "Education",
+      "telecommunications": "Telecommunications",
+      "other": "Other"
+    },
+    "sizes": {
+      "1_10": "1-10 Employees",
+      "11_50": "11-50 Employees",
+      "51_200": "51-200 Employees",
+      "201_500": "201-500 Employees",
+      "501_1000": "501-1000 Employees",
+      "1000_plus": "1000+ Employees"
+    }
+  },
+  "sidebar": {
+    "insights": "Insights",
+    "salesDashboard": "Sales Dashboard",
+    "callAnalysis": "Call Analysis",
+    "compliance": "MiFID Compliance",
+    "workflow": "Workflow",
+    "promises": "Promises",
+    "management": "Management",
+    "teams": "Teams",
+    "userMgmt": "User Mgmt",
+    "benchmarking": "Benchmarking",
+    "roles": "Roles",
+    "qaTemplates": "QA Templates",
+    "qaParameters": "QA Parameters",
+    "businessProfile": "Business Profile",
+    "platform": "Platform",
+    "organizations": "Organizations"
+  },
+  "compliance": {
+    "title": "MiFID Compliance Dashboard",
+    "subtitle": "Monitor and manage regulatory compliance for your organization",
+    "startDate": "Start Date",
+    "endDate": "End Date",
+    "generateReport": "Generate Report",
+    "totalCalls": "Total Calls",
+    "compliantCalls": "Compliant Calls",
+    "complianceRate": "Compliance Rate",
+    "ruleStatistics": "Compliance Rule Statistics",
+    "passRate": "Pass Rate",
+    "total": "Total",
+    "pass": "Pass",
+    "fail": "Fail",
+    "na": "N/A",
+    "noReport": "No Compliance Report",
+    "noReportDesc": "Select a date range and generate a compliance report",
+    "suitabilityAssessment": "Suitability Assessment",
+    "bestExecution": "Best Execution",
+    "clientCategorization": "Client Categorization",
+    "overallStatus": "Overall Status",
+    "runComplianceCheck": "Run Compliance Check",
+    "allRequirementsMet": "All MiFID requirements met",
+    "someRequirementsMissing": "Some MiFID requirements missing",
+    "complianceNotVerified": "MiFID compliance not verified",
+    "verified": "VERIFIED",
+    "notVerified": "NOT VERIFIED",
+    "notSet": "NOT SET",
+    "compliant": "COMPLIANT",
+    "partial": "PARTIAL",
+    "nonCompliant": "NON-COMPLIANT"
+  },
+  "landing": {
+    "overview": "Home",
+    "featuresNav": "Features",
+    "industries": "Industries",
+    "performance": "Performance",
+    "industriesList": {
+      "finance": {
+        "title": "Financial Institutions",
+        "desc": "Ensuring compliance for banks, investment firms, and asset managers."
+      },
+      "insurance": {
+        "title": "Insurance Agencies",
+        "desc": "Analyzing policy discussions and claims processing interactions."
+      },
+      "healthcare": {
+        "title": "Healthcare Services",
+        "desc": "Maintaining HIPAA compliance and patient communication quality."
+      },
+      "customerSupport": {
+        "title": "Customer Support Centers",
+        "desc": "Optimizing response times and customer satisfaction metrics."
+      }
+    },
+    "contactNav": "Contact",
+    "contactForm": {
+      "title": "Send us a Message",
+      "name": "Full Name",
+      "email": "Email Address",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Send Message",
+      "success": "Message sent successfully!",
+      "error": "Failed to send message. Please try again."
+    },
+    "tagline": "AI-driven Call Analytics",
+    "hero": {
+      "title": "Transform Your Communication Analytics with AI",
+      "subtitle": "Real-time monitoring, transcription, and analysis of sensitive communications. Ensure compliance with MiFID II & III regulations while enhancing operational efficiency.",
+      "startTrial": "Start Free Trial",
+      "watchDemo": "Watch Demo",
+      "dashboardPreview": "Interactive Dashboard Preview"
+    },
+    "stats": {
+      "complianceAccuracy": "Compliance Accuracy",
+      "fasterProcessing": "Faster Processing",
+      "languagesSupported": "Languages Supported",
+      "costReduction": "Cost Reduction"
+    },
+    "about": {
+      "title": "Who we are",
+      "description1": "At SecuroSense, we are at the forefront of AI-driven communication analytics, having developed various sophisticated solutions including security and compliance analysis systems that form integral part of Securotek's secure ecosystem.",
+      "description2": "With a focus on MiFID II & III regulations, our solution enables financial institutions, stock brokers, insurance companies, and wealth management firms to ensure compliance, mitigate risk, and enhance operational efficiency."
+    },
+    "contact": {
+      "title": "Contact Us",
+      "landline": "PHONE",
+      "email": "EMAIL",
+      "website": "WEBSITE",
+      "quickResponse": "Quick Response",
+      "quickResponseDesc": "Get a response within 24 hours. Our team is ready to help you transform your communication skills.",
+      "scheduleDemo": "Schedule a Demo"
+    },
+    "features": {
+      "title": "Why Use SecuroSense",
+      "multilingual": {
+        "title": "Multilingual Support",
+        "desc": "We offer analyzing calls and conversations both text and voice conversations, catering to an international audience."
+      },
+      "textVoice": {
+        "title": "Text & Voice Chat",
+        "desc": "Facilitate instant communication through text and voice channels, enhancing customer engagement."
+      },
+      "efficiency": {
+        "title": "Efficiency Boost",
+        "desc": "Optimize time with navigating 20 minutes of conversation into just 1 minute, thus saving time and resources."
+      },
+      "feedback": {
+        "title": "Consistent Feedback",
+        "desc": "Achieve 90% accuracy in feedback to support informed decisions and performance improvements."
+      },
+      "scoring": {
+        "title": "Customizable Scoring",
+        "desc": "Tailor our assessment system to meet your business requirements for precise evaluation."
+      },
+      "insights": {
+        "title": "Real-time Insights",
+        "desc": "Empower your team with AI-driven insights in real-time to improve customer interactions."
+      }
+    },
+    "languageCoverage": {
+      "title": "Global Language Coverage",
+      "description": "SecuroSense supports over 50 languages with industry-leading accuracy. Our AI is trained on diverse linguistic patterns to ensure consistent performance across all major languages."
+    }
+  },
+  "featuresPage": {
+    "brandTagline": "AI QA and Compliance Intelligence",
+    "nav": {
+      "home": "Home",
+      "features": "Features"
+    },
+    "hero": {
+      "kicker": "Platform Capabilities",
+      "title": "Enterprise-grade call intelligence for quality, coaching, and compliance.",
+      "subtitle": "SecuroSense combines AI transcription, multilingual analysis, regulatory workflows, and role-based controls in one secure workspace for operations teams.",
+      "watchProductDemo": "Watch Product Demo"
+    },
+    "cards": {
+      "aiCallAnalysis": {
+        "title": "AI Call Analysis",
+        "desc": "Automatically transcribe and evaluate conversations with AI to surface quality insights, agent behavior trends, and coaching priorities."
+      },
+      "riskDetection": {
+        "title": "Risk Detection",
+        "desc": "Identify potential compliance and conversation risks early, including policy violations, disclosure gaps, and escalation signals."
+      },
+      "complianceMonitoring": {
+        "title": "Compliance Monitoring",
+        "desc": "Continuously monitor calls against quality and regulatory rules so teams can act quickly on exceptions and audit findings."
+      },
+      "operationsDashboards": {
+        "title": "Operations Dashboards",
+        "desc": "Give leadership and operations teams real-time visibility into volumes, outcomes, quality performance, and workflow status."
+      },
+      "arabicSupport": {
+        "title": "Arabic Support (Can be extended to other languages as well)",
+        "desc": "Supports Arabic-first analysis and reporting today, with an architecture designed to scale to additional languages as needed."
+      },
+      "callAnalysisReport": {
+        "title": "Call Analysis Report",
+        "desc": "Generate structured call analysis reports with summaries, key findings, risk flags, and follow-up recommendations."
+      },
+      "roleBasedMultiTenantAccess": {
+        "title": "Role-Based Multi-Tenant Access",
+        "desc": "Keep tenant data isolated with granular role permissions for admins, managers, auditors, team leads, and agents."
+      },
+      "secureDataManagement": {
+        "title": "Secure Data Management",
+        "desc": "Protect sensitive data with secure storage, controlled access, governance policies, and retention workflows."
+      },
+      "smartAlertsNotifications": {
+        "title": "Smart Alerts & Notifications",
+        "desc": "Trigger timely alerts and operational notifications for critical events, compliance risks, and workflow exceptions."
+      }
+    },
+    "security": {
+      "title": "Security and Governance",
+      "items": {
+        "item1": "JWT authentication and refresh-token flow",
+        "item2": "Sensitive field encryption for PII at rest",
+        "item3": "Request-level rate limiting for API and uploads",
+        "item4": "Organization-aware data filtering and permission middleware",
+        "item5": "Data retention policies and cleanup endpoints"
+      }
+    },
+    "delivery": {
+      "title": "Delivery and Integration",
+      "items": {
+        "item1": "Swagger API documentation for rapid integration",
+        "item2": "Direct upload flow with playback endpoints",
+        "item3": "Manual or scheduled ingestion pipelines",
+        "item4": "Auto-generated PDF analysis reports",
+        "item5": "Back-office setup for roles, teams, templates, and organizations"
+      }
+    },
+    "bottomCta": {
+      "title": "Ready to see SecuroSense in action?",
+      "subtitle": "Explore the platform overview or start your trial to unlock AI-powered QA, compliance, and performance intelligence.",
+      "backHome": "Back to Home"
+    }
+  },
+  "performancePage": {
+    "hero": {
+      "kicker": "Performance Intelligence",
+      "title": "Track revenue, quality, and coaching outcomes in one measurable view.",
+      "subtitle": "SecuroSense performance analytics combine sales, agent quality, and compliance indicators so leaders can act quickly with confidence."
+    },
+    "kpis": {
+      "complianceAccuracy": "Compliance Accuracy",
+      "processingSpeed": "Faster Processing",
+      "languageCoverage": "Languages Supported",
+      "costReduction": "Cost Reduction"
+    },
+    "platform": {
+      "title": "High-Volume Performance by Design",
+      "paragraph1": "SecuroSense is designed to operate in high-volume communication environments where speed, accuracy, and reliability are critical.",
+      "paragraph2": "The platform processes thousands of communications simultaneously while maintaining high transcription accuracy and minimal latency. Its scalable architecture allows organizations to expand monitoring capabilities without compromising system performance.",
+      "highlightsTitle": "Performance Highlights",
+      "highlights": {
+        "item1": "Real-time processing of voice communications",
+        "item2": "High-accuracy AI transcription models",
+        "item3": "Low-latency analytics and alerts",
+        "item4": "Scalable cloud-ready infrastructure",
+        "item5": "Enterprise-grade security and reliability"
+      },
+      "paragraph3": "SecuroSense ensures organizations can analyze communication data quickly, accurately, and securely, even in high-traffic operational environments."
+    },
+    "cards": {
+      "sales": {
+        "title": "Sales Performance",
+        "desc": "Monitor total revenue, closed deals, and conversion trends with configurable date windows and organization-level filtering."
+      },
+      "agent": {
+        "title": "Agent Quality Metrics",
+        "desc": "Compare call volume, QA scores, and closing rate by agent to identify top performers and targeted coaching opportunities."
+      },
+      "sentiment": {
+        "title": "Sentiment and Conversation Health",
+        "desc": "Analyze positive, neutral, and negative conversation patterns to detect friction points and improve customer outcomes."
+      },
+      "team": {
+        "title": "Team Benchmarking",
+        "desc": "View team-level revenue contribution and productivity trends to balance workloads and replicate high-performing playbooks."
+      },
+      "compliance": {
+        "title": "Compliance Signal Tracking",
+        "desc": "Overlay MiFID readiness indicators with operational metrics to reduce regulatory risk while protecting performance."
+      },
+      "reporting": {
+        "title": "Actionable Reporting",
+        "desc": "Use downloadable reports and dashboard snapshots to align leadership, QA, and frontline teams around weekly priorities."
+      }
+    },
+    "dataSources": {
+      "title": "Live Data Sources in This App",
+      "subtitle": "These platform endpoints power the performance experience across sales, analysis, and coaching dashboards.",
+      "stats": "Aggregated KPI totals such as revenue and deal outcomes.",
+      "team": "Revenue and productivity split by teams.",
+      "distribution": "Revenue and source distribution for trend analysis.",
+      "agents": "Agent-level score, volume, sentiment mix, and closing rate."
+    },
+    "bottomCta": {
+      "title": "Turn insights into measurable growth.",
+      "subtitle": "Move from raw calls to a repeatable performance engine with AI analysis, compliance context, and team coaching."
+    }
+  },
+  "industriesPage": {
+    "hero": {
+      "kicker": "Industries We Serve",
+      "title": "Built for regulated, conversation-heavy businesses.",
+      "subtitle": "SecuroSense is designed for organizations where call quality, compliance, and coaching directly affect revenue, risk, and customer trust."
+    },
+    "cards": {
+      "wealth": {
+        "title": "Wealth and Asset Management",
+        "desc": "Support advisory teams with call intelligence, suitability tracking, and coaching insights to improve client outcomes."
+      },
+      "brokerage": {
+        "title": "Brokerage and Securities",
+        "desc": "Monitor high-volume sales and advisory calls with structured QA and regulatory checks across distributed teams."
+      },
+      "insurance": {
+        "title": "Insurance Providers",
+        "desc": "Strengthen underwriting and sales call quality with script adherence, objection handling, and compliance scoring."
+      },
+      "banking": {
+        "title": "Retail and Private Banking",
+        "desc": "Track service quality, conversion behavior, and risk signals across branch, phone, and relationship teams."
+      },
+      "fintech": {
+        "title": "Fintech and Digital Platforms",
+        "desc": "Scale QA operations quickly with automated analysis, multilingual support, and performance dashboards."
+      },
+      "contactCenters": {
+        "title": "Enterprise Contact Centers",
+        "desc": "Improve agent consistency, reduce escalations, and drive measurable quality improvement through AI-led feedback loops."
+      }
+    },
+    "bottomCta": {
+      "title": "Need an industry-specific rollout plan?",
+      "subtitle": "Start with a pilot and map your QA, compliance, and coaching requirements to a tailored deployment model."
+    }
+  },
+  "contactPage": {
+    "hero": {
+      "kicker": "Contact",
+      "title": "Talk to our team.",
+      "subtitle": "Share your goals and we will help you map the right SecuroSense setup for your QA, compliance, and performance needs."
+    },
+    "details": {
+      "title": "Contact Details",
+      "emailLabel": "Email",
+      "responseLabel": "Response Time",
+      "responseValue": "Typically within 24 hours",
+      "noteLabel": "Best For",
+      "noteValue": "Demo requests, onboarding planning, and enterprise setup discussions"
+    },
+    "form": {
+      "title": "Send Us a Message",
+      "subtitle": "Fill in the form and your email app will open with a prefilled draft to our team.",
+      "name": "Full Name",
+      "email": "Work Email",
+      "company": "Company",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Send Message",
+      "requiredError": "Please fill in name, email, and message.",
+      "defaultSubject": "Contact Request",
+      "successHint": "Opening your email app with a prefilled message...",
+      "success": "Message sent successfully!",
+      "error": "Failed to send message. Please try again."
+    }
+  },
+  "callAnalysis": {
+    "title": "Call Analysis",
+    "subtitle": "Upload and review call transcripts and AI insights",
+    "selectOrganization": "Select Organization",
+    "allOrganizations": "All Organizations",
+    "uploadNewRecording": "Upload New Recording",
+    "noAgents": "No agents created yet",
+    "addFirstAgent": "Add your first agent",
+    "upload": "Upload",
+    "uploading": "Uploading...",
+    "selectFiles": "Select Files",
+    "dragDrop": "Drag and drop files here",
+    "or": "or",
+    "browse": "Browse",
+    "cancel": "Cancel",
+    "close": "Close",
+    "viewDetails": "View Details",
+    "downloadPdf": "Download PDF",
+    "addInteraction": "Add Interaction",
+    "viewCall": "View Call",
+    "viewTranscript": "View Transcript",
+    "noCalls": "No calls",
+    "noCallsDesc": "Start by uploading your first recording",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "leadsTable": {
+      "title": "Customer Leads & Agent Interactions",
+      "viewingLeads": "Viewing {{ count }} leads",
+      "customerName": "Customer Name",
+      "health": "Health (Last 4 Calls)",
+      "stage": "Stage",
+      "lastUpdated": "Last Updated",
+      "actions": "Actions",
+      "noHistory": "No history",
+      "newLead": "New Lead",
+      "dealWon": "Deal Won",
+      "inProgress": "In Progress",
+      "noLeads": "No leads found. Start by uploading a call recording.",
+      "fetching": "Fetching data...",
+      "showing": "Showing",
+      "to": "to",
+      "of": "of",
+      "totalCalls": "Total calls"
+    },
+    "uploadModal": {
+      "title": "Upload Audio Recording",
+      "customerName": "Customer Name",
+      "customerNameAr": "Customer Name (Arabic)",
+      "customerNumber": "Customer Number",
+      "dragDrop": "Drag and drop audio here, or",
+      "browse": "browse",
+      "filesSelected": "{{ count }} files selected",
+      "supportedFormats": "MP3, WAV, M4A supported",
+      "stagedFiles": "Staged Files",
+      "total": "total",
+      "clearAll": "Clear All",
+      "agent": "Agent",
+      "autoDetect": "Auto-detect from call",
+      "autoDetectDesc": "Leave unselected to auto-detect agent from call",
+      "analyzing": "Analyzing call {{ current }} of {{ total }}...",
+      "finalizing": "Finalizing batch...",
+      "uploadWarnings": "Upload Warnings:",
+      "startAnalysis": "Start Batch Analysis",
+      "extracting": "Extracting Agents..."
+    }
+  },
+  "leadDetail": {
+    "combinedCall": "Combined Call",
+    "totalCalls": "Total Calls",
+    "aiAutomatedQa": "AI-Automated QA",
+    "avgScore": "Avg Score",
+    "complianceSummary": "Compliance Summary",
+    "fraudRisk": "Fraud Risk",
+    "regulatoryCheck": "Regulatory Check",
+    "highRisk": "High Risk",
+    "fraudAlerts": "Fraud Alerts",
+    "escalations": "Escalations",
+    "probability": "Probability",
+    "highestRiskyTone": "Highest risky tone score",
+    "noFraudPhrases": "No explicit fraud phrases detected.",
+    "fraudIndicatorsDetected": "Fraud indicators detected in history.",
+    "escalationRequired": "Escalation Required",
+    "noEscalation": "No Escalation",
+    "nonCompliantCalls": "Non-compliant calls",
+    "totalViolations": "Total violations",
+    "customer": "Customer",
+    "agentName": "Agent Name",
+    "date": "Date",
+    "duration": "Duration",
+    "sentiment": "Sentiment",
+    "callType": "Call Type",
+    "outcome": "Outcome",
+    "conversion": "Conversion",
+    "risk": "Risk",
+    "compliance": "Compliance",
+    "fraudPct": "Fraud %",
+    "actions": "Actions",
+    "inProgress": "In Progress",
+    "closed": "Closed",
+    "pass": "PASS",
+    "fail": "FAIL",
+    "na": "N/A",
+    "neutral": "NEUTRAL",
+    "positive": "POSITIVE",
+    "negative": "NEGATIVE",
+    "discovery": "Discovery",
+    "highRiskLabel": "HIGH RISK",
+    "risky": "RISKY",
+    "compliant": "COMPLIANT",
+    "aiQaCompliance": "AI-Automated QA Compliance",
+    "notDiscussed": "Not discussed",
+    "runComplianceCheck": "Run Compliance Check",
+    "customerObjections": "Customer Objections Handled",
+    "suitabilityAssessment": "Suitability Assessment",
+    "bestExecution": "Best Execution",
+    "clientCategory": "Client Category",
+    "overallStatus": "Overall Status"
+  },
+  "callDetail": {
+    "title": "Call Compliance & Risk Detail",
+    "dealClosed": "Deal Closed",
+    "riskSuffix": "Risk",
+    "qaScore": "QA Score",
+    "overallRiskScore": "Overall Risk Score",
+    "scriptAdherence": "Script Adherence",
+    "riskDisclosures": "Risk Disclosures",
+    "misSelling": "Mis-selling",
+    "harassment": "Harassment",
+    "riskyToneScore": "Risky tone score",
+    "keyPhrase": "Key phrase",
+    "missingDisclosures": "Missing disclosures",
+    "violationKeywords": "Violation keywords",
+    "aiSummary": "AI Summary",
+    "aiCoachingTip": "AI Manager's Coaching Tip",
+    "mifidCompliance": "MiFID II & III Compliance",
+    "score": "Score",
+    "notAssessed": "Not Assessed",
+    "bestExecutionConfirmed": "Best execution policy confirmed",
+    "bestExecutionNotVerified": "Best execution not verified",
+    "clientNotCategorized": "Client not categorized",
+    "agentProfile": "Agent Context / Profile",
+    "roleTitle": "Role / Title",
+    "company": "Company",
+    "agentStruggles": "Agent Struggles",
+    "keyTopics": "Key Topics",
+    "actionItems": "Action Items",
+    "back": "Back",
+    "closeDetail": "Close Detail",
+    "pdfReport": "PDF Report",
+    "detected": "Detected",
+    "notDetected": "Not Detected",
+    "fraudAlert": "FRAUD ALERT",
+    "lowRisk": "Low Risk",
+    "mediumRisk": "Medium Risk",
+    "highRisk": "High Risk",
+    "unknown": "Unknown",
+    "complete": "Complete",
+    "missing": "Missing",
+    "partialStatus": "Partial",
+    "clientCategoryRetail": "Retail",
+    "clientCategoryProfessional": "Professional",
+    "clientCategoryEligibleCounterparty": "Eligible Counterparty",
+    "allMifidMet": "All MiFID requirements met",
+    "someMifidMissing": "Some MiFID requirements missing",
+    "mifidNotVerified": "MiFID compliance not verified"
+  },
+  "transcript": {
+    "fullTranscript": "Full Transcript",
+    "detailedConversationTranscript": "Detailed Conversation Transcript",
+    "detailedTranscriptDesc": "Review every turn of the interaction with AI-detected speakers and line numbers.",
+    "viewFullTranscript": "View Full Transcript",
+    "viewEnglish": "English",
+    "viewArabic": "Arabic",
+    "dismiss": "Dismiss",
+    "customer": "Customer",
+    "agent": "Agent",
+    "transcriptArabic": "Transcript (Arabic)",
+    "arabicNotAvailable": "Arabic transcript not available for this call."
+  },
+  "agent": {
+    "title": "User Management",
+    "subtitle": "Monitor and manage your team members and high-performing agents",
+    "addUser": "Add User +",
+    "createNewUser": "Create New User",
+    "subtitleModal": "Set up account access for your new team member",
+    "teamAssignment": "Team Assignment",
+    "selectTeam": "Select Team",
+    "role": "Role",
+    "selectRole": "Select Role",
+    "fullName": "Full Name",
+    "emailAddress": "Email Address",
+    "password": "Password",
+    "viewPerformance": "View Performance",
+    "noAgents": "No agents created yet",
+    "addFirstAgent": "Add your first agent",
+    "user": "User",
+    "noTeam": "No Team",
+    "create": "Create",
+    "cancel": "Cancel"
+  },
+  "promise": {
+    "title": "Promise Management",
+    "subtitle": "Track and manage promises made to customers",
+    "createPromise": "Create Promise",
+    "promiseText": "Promise Text",
+    "dueDate": "Due Date",
+    "status": "Status",
+    "pending": "Pending",
+    "fulfilled": "Fulfilled",
+    "overdue": "Overdue",
+    "noPromises": "No promises",
+    "addFirstPromise": "Add your first promise"
+  },
+  "benchmarking": {
+    "title": "Benchmarking",
+    "subtitle": "Compare agent performance against benchmarks",
+    "selectAgent": "Select Agent",
+    "selectMetric": "Select Metric",
+    "averageScore": "Average Score",
+    "totalCalls": "Total Calls",
+    "complianceRate": "Compliance Rate"
+  },
+  "qaTemplate": {
+    "title": "QA Templates",
+    "createTemplate": "Create Template",
+    "templateName": "Template Name",
+    "description": "Description",
+    "industry": "Industry",
+    "parameters": "Parameters",
+    "noTemplates": "No templates",
+    "createFirstTemplate": "Create your first template"
+  },
+  "category": {
+    "title": "Category Management",
+    "createCategory": "Create Category",
+    "categoryName": "Category Name",
+    "noCategories": "No categories",
+    "createFirstCategory": "Create your first category"
+  },
+  "errors": {
+    "generic": "Something went wrong",
+    "network": "Network error",
+    "unauthorized": "Unauthorized",
+    "forbidden": "Forbidden",
+    "notFound": "Not found",
+    "serverError": "Server error",
+    "validation": "Validation error"
+  },
+  "success": {
+    "saved": "Saved successfully",
+    "created": "Created successfully",
+    "updated": "Updated successfully",
+    "deleted": "Deleted successfully",
+    "uploaded": "Uploaded successfully"
+  }
+}
+

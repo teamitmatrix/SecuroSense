@@ -1,0 +1,260 @@
+/* Add RTL support */
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] .flex:not(.flex-col):not(.flex-row) {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .text-left {
+  text-align: right;
+}
+
+[dir="rtl"] .text-right {
+  text-align: left;
+}
+
+[dir="rtl"] .ml-auto {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+[dir="rtl"] .mr-auto {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+[dir="rtl"] .justify-between {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .language-switcher-container .absolute {
+  left: auto;
+  right: 0;
+}
+
+/* RTL fixes for role cards */
+[dir="rtl"] .flex.items-center.justify-between {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .text-left {
+  text-align: right;
+}
+
+[dir="rtl"] .justify-end {
+  justify-content: flex-start;
+}
+
+[dir="rtl"] .justify-start {
+  justify-content: flex-end;
+}
+
+/* RTL fixes for modal */
+[dir="rtl"] .flex.justify-between {
+  flex-direction: row-reverse;
+}
+
+/* RTL Sidebar positioning - Force sidebar to right side for all screen sizes */
+[dir="rtl"] .sidebar-container,
+[dir="rtl"] aside.sidebar-container,
+[dir="rtl"] app-sidebar aside,
+[dir="rtl"] app-sidebar .sidebar-container,
+html[dir="rtl"] .sidebar-container,
+html[dir="rtl"] aside.sidebar-container,
+html[dir="rtl"] app-sidebar aside,
+html[dir="rtl"] app-sidebar .sidebar-container {
+  right: 0 !important;
+  left: auto !important;
+  border-left: 1px solid #334155 !important;
+  border-right: none !important;
+}
+
+/* CRITICAL: Override all left positioning for RTL sidebar */
+html[dir="rtl"] app-sidebar,
+html[dir="rtl"] app-sidebar > aside,
+html[dir="rtl"] app-sidebar aside.sidebar-container,
+html[dir="rtl"] app-sidebar aside[class*="left-0"],
+html[dir="rtl"] .main-layout-container app-sidebar {
+  right: 0 !important;
+  left: auto !important;
+}
+
+/* Ensure sidebar wrapper is on right for RTL */
+html[dir="rtl"] .main-layout-container.flex-row-reverse app-sidebar {
+  order: 2 !important;
+}
+
+/* Desktop: RTL sidebar should be on right (when relative) */
+[dir="rtl"] .sidebar-container.lg\:relative,
+[dir="rtl"] aside.sidebar-container.lg\:relative,
+[dir="rtl"] app-sidebar aside.lg\:relative,
+html[dir="rtl"] .sidebar-container.lg\:relative,
+html[dir="rtl"] aside.sidebar-container.lg\:relative,
+html[dir="rtl"] app-sidebar aside.lg\:relative {
+  right: 0 !important;
+  left: auto !important;
+  position: relative !important;
+}
+
+/* Mobile: RTL sidebar hidden state (off-screen to the right) - Only on mobile */
+@media (max-width: 1023px) {
+  [dir="rtl"] .sidebar-container.translate-x-full,
+  [dir="rtl"] aside.sidebar-container.translate-x-full,
+  [dir="rtl"] app-sidebar aside.translate-x-full,
+  html[dir="rtl"] .sidebar-container.translate-x-full,
+  html[dir="rtl"] aside.sidebar-container.translate-x-full,
+  html[dir="rtl"] app-sidebar aside.translate-x-full {
+    transform: translateX(100%) !important;
+  }
+}
+
+/* Desktop: Always show sidebar (override mobile hide) - Highest priority */
+@media (min-width: 1024px) {
+  [dir="rtl"] .sidebar-container,
+  [dir="rtl"] aside.sidebar-container,
+  [dir="rtl"] app-sidebar aside,
+  html[dir="rtl"] .sidebar-container,
+  html[dir="rtl"] aside.sidebar-container,
+  html[dir="rtl"] app-sidebar aside,
+  [dir="rtl"] .sidebar-container.translate-x-full,
+  [dir="rtl"] aside.sidebar-container.translate-x-full,
+  [dir="rtl"] app-sidebar aside.translate-x-full,
+  html[dir="rtl"] .sidebar-container.translate-x-full,
+  html[dir="rtl"] aside.sidebar-container.translate-x-full,
+  html[dir="rtl"] app-sidebar aside.translate-x-full {
+    transform: translateX(0) !important;
+    right: 0 !important;
+    left: auto !important;
+  }
+}
+
+/* Mobile: RTL sidebar visible state (on screen) - when isOpen is true */
+[dir="rtl"] .sidebar-container:not(.translate-x-full):not(.lg\:translate-x-0),
+[dir="rtl"] aside.sidebar-container:not(.translate-x-full):not(.lg\:translate-x-0),
+[dir="rtl"] app-sidebar aside:not(.translate-x-full):not(.lg\:translate-x-0),
+html[dir="rtl"] .sidebar-container:not(.translate-x-full):not(.lg\:translate-x-0),
+html[dir="rtl"] aside.sidebar-container:not(.translate-x-full):not(.lg\:translate-x-0),
+html[dir="rtl"] app-sidebar aside:not(.translate-x-full):not(.lg\:translate-x-0) {
+  transform: translateX(0) !important;
+  right: 0 !important;
+  left: auto !important;
+}
+
+/* Override any left positioning for RTL - Must be very specific */
+[dir="rtl"] .sidebar-container.left-0,
+[dir="rtl"] aside.sidebar-container.left-0,
+[dir="rtl"] app-sidebar aside.left-0,
+[dir="rtl"] .sidebar-container[class*="left-0"],
+[dir="rtl"] aside[class*="left-0"],
+html[dir="rtl"] .sidebar-container.left-0,
+html[dir="rtl"] aside.sidebar-container.left-0,
+html[dir="rtl"] app-sidebar aside.left-0,
+html[dir="rtl"] .sidebar-container[class*="left-0"],
+html[dir="rtl"] aside[class*="left-0"] {
+  left: auto !important;
+  right: 0 !important;
+}
+
+/* Force RTL sidebar order in flex container */
+[dir="rtl"] .main-layout-container > app-sidebar {
+  order: 2 !important;
+}
+
+[dir="rtl"] .main-layout-container > main {
+  order: 1 !important;
+}
+
+/* Ensure RTL sidebar is on right even with Tailwind classes */
+[dir="rtl"] app-sidebar aside[class*="left-0"],
+html[dir="rtl"] app-sidebar aside[class*="left-0"],
+[dir="rtl"] app-sidebar aside,
+html[dir="rtl"] app-sidebar aside {
+  left: auto !important;
+  right: 0 !important;
+}
+
+/* Desktop RTL: Sidebar should be on right when relative */
+@media (min-width: 1024px) {
+  [dir="rtl"] .main-layout-container.flex-row-reverse > app-sidebar {
+    order: 2;
+  }
+  
+  [dir="rtl"] .main-layout-container.flex-row-reverse > main {
+    order: 1;
+  }
+}
+
+/* RTL Main Layout */
+[dir="rtl"] .main-layout-container,
+html[dir="rtl"] .main-layout-container {
+  flex-direction: row-reverse !important;
+}
+
+/* Desktop: Always show sidebar on right for RTL */
+@media (min-width: 1024px) {
+  html[dir="rtl"] app-sidebar aside.sidebar-container,
+  html[dir="rtl"] .sidebar-container {
+    right: 0 !important;
+    left: auto !important;
+    transform: translateX(0) !important;
+  }
+  
+  html[dir="rtl"] app-sidebar aside.lg\:relative {
+    position: relative !important;
+    right: 0 !important;
+    left: auto !important;
+    transform: translateX(0) !important;
+  }
+}
+
+/* Mobile: Show sidebar when isOpen (not translate-x-full) */
+@media (max-width: 1023px) {
+  html[dir="rtl"] app-sidebar aside.sidebar-container:not(.translate-x-full),
+  html[dir="rtl"] .sidebar-container:not(.translate-x-full) {
+    right: 0 !important;
+    left: auto !important;
+    transform: translateX(0) !important;
+  }
+}
+
+/* RTL Navigation items */
+[dir="rtl"] .flex.items-center.gap-3 {
+  flex-direction: row-reverse;
+}
+
+/* RTL Text alignment in sidebar */
+[dir="rtl"] nav a {
+  text-align: right;
+}
+
+[dir="rtl"] .text-left {
+  text-align: right;
+}
+
+/* RTL Sidebar navigation items */
+[dir="rtl"] nav .flex.items-center.gap-3 {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+/* RTL Sidebar icons positioning */
+[dir="rtl"] nav a svg {
+  order: 2;
+}
+
+[dir="rtl"] nav a span {
+  order: 1;
+}
+
+/* RTL Mobile header */
+[dir="rtl"] header.flex {
+  flex-direction: row-reverse;
+}
+
+/* Existing styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

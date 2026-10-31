@@ -1,0 +1,607 @@
+{
+  "common": {
+    "welcome": "Bienvenue",
+    "login": "Connexion",
+    "register": "S'inscrire",
+    "logout": "Déconnexion",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "editProfile": "Modifier le profil",
+    "create": "Créer",
+    "update": "Mettre à jour",
+    "search": "Rechercher",
+    "filter": "Filtrer",
+    "loading": "Chargement...",
+    "noData": "Aucune donnée trouvée",
+    "close": "Fermer",
+    "submit": "Soumettre",
+    "back": "Retour",
+    "next": "Suivant",
+    "previous": "Précédent",
+    "confirm": "Confirmer",
+    "yes": "Oui",
+    "no": "Non",
+    "more": "plus",
+    "openSidebar": "Ouvrir la barre latérale",
+    "editRole": "Modifier le rôle",
+    "updateRole": "Mettre à jour le rôle"
+  },
+  "auth": {
+    "email": "Adresse e-mail",
+    "password": "Mot de passe",
+    "name": "Nom complet",
+    "forgotPassword": "Mot de passe oublié ?",
+    "rememberMe": "Se souvenir de moi",
+    "signIn": "Se connecter",
+    "signUp": "S'inscrire",
+    "createAccount": "Créer un compte",
+    "alreadyHaveAccount": "Vous avez déjà un compte ?",
+    "dontHaveAccount": "Vous n'avez pas de compte ?",
+    "invalidCredentials": "Identifiants invalides",
+    "loginSuccess": "Connexion réussie"
+  },
+  "dashboard": {
+    "title": "Tableau de bord",
+    "sales": "Tableau de bord des ventes",
+    "analytics": "Analyses",
+    "calls": "Appels",
+    "teams": "Équipes",
+    "users": "Utilisateurs",
+    "settings": "Paramètres"
+  },
+  "sales": {
+    "overview": "Aperçu des performances et métriques des ventes",
+    "selectOrganization": "Sélectionner l'organisation",
+    "allOrganizations": "Toutes les organisations",
+    "totalRevenue": "Revenu total",
+    "dealsClosed": "affaires conclues",
+    "revenueDistribution": "Répartition des revenus",
+    "teamPerformance": "Performance de l'équipe",
+    "noTeamData": "Aucune donnée de performance d'équipe disponible"
+  },
+  "organization": {
+    "businessInfo": "Informations sur l'entreprise",
+    "name": "Nom",
+    "industry": "Industrie",
+    "size": "Taille",
+    "email": "Email",
+    "phone": "Téléphone",
+    "website": "Site web",
+    "address": "Adresse",
+    "city": "Ville",
+    "country": "Pays",
+    "state": "État",
+    "postalCode": "Code postal",
+    "description": "Description",
+    "foundedYear": "Année de fondation",
+    "management": "Gestion des organisations",
+    "managementDesc": "Gérer les organisations et créer des utilisateurs administrateurs",
+    "createOrganization": "Créer une organisation",
+    "createOrganizationDesc": "Ajouter une nouvelle organisation à la plateforme",
+    "create": "Créer",
+    "viewDetails": "Voir les détails",
+    "permissions": "Permissions",
+    "admin": "Admin",
+    "organizationDetails": "Détails de l'organisation",
+    "basicInfo": "Informations de base",
+    "contactInfo": "Informations de contact",
+    "additionalInfo": "Informations supplémentaires",
+    "addressInfo": "Informations d'adresse",
+    "legalInfo": "Informations légales et d'enregistrement",
+    "accountInfo": "Informations du compte",
+    "statistics": "Statistiques",
+    "users": "Utilisateurs",
+    "teams": "Équipes",
+    "calls": "Appels",
+    "profileDesc": "Afficher et gérer les informations de profil de votre entreprise",
+    "timezone": "Fuseau horaire",
+    "taxId": "Numéro d'identification fiscale / TVA",
+    "registrationNumber": "Numéro d'enregistrement",
+    "adminName": "Nom de l'administrateur",
+    "adminEmail": "Email de l'administrateur",
+    "createdAt": "Créé le",
+    "updatedAt": "Dernière mise à jour",
+    "noInfo": "Aucune information d'entreprise disponible"
+  },
+  "team": {
+    "title": "Gestion des équipes",
+    "createTeam": "Créer une équipe",
+    "teamName": "Nom de l'équipe",
+    "addAgent": "Ajouter un agent",
+    "agents": "Agents",
+    "noTeams": "Aucune équipe créée pour le moment",
+    "createFirstTeam": "Créez votre première équipe"
+  },
+  "role": {
+    "title": "Gestion des rôles",
+    "subtitle": "Définissez ce que les membres de votre équipe peuvent voir et faire.",
+    "createRole": "Créer un rôle",
+    "addRole": "Ajouter un rôle",
+    "editRole": "Modifier le rôle",
+    "roleName": "Nom du rôle",
+    "roleId": "ID du rôle",
+    "description": "Description",
+    "permissions": "Permissions",
+    "systemRole": "Rôle système",
+    "users": "Utilisateurs",
+    "user": "Utilisateur",
+    "noDescription": "Aucune description fournie.",
+    "noRoles": "Aucun rôle personnalisé créé pour le moment",
+    "createFirstRole": "Créez votre premier rôle",
+    "more": "plus",
+    "createNewRole": "Créer un nouveau rôle",
+    "editRoleTitle": "Modifier le rôle",
+    "roleDescription": "Les rôles définissent les actions que les utilisateurs peuvent effectuer dans le système.",
+    "targetOrganization": "Organisation cible",
+    "systemRoleGlobal": "Rôle système (disponible pour toutes les organisations)",
+    "orgSpecificRole": "Sélectionnez une organisation pour créer un rôle spécifique à l'organisation, ou laissez \"Rôle système\" pour un rôle global.",
+    "rolePermissions": "Permissions du rôle",
+    "selectPermissions": "Sélectionnez les permissions spécifiques que ce rôle doit avoir. Les utilisateurs assignés à ce rôle hériteront de toutes les capacités sélectionnées.",
+    "selectedPermissions": "Permissions sélectionnées",
+    "updateRole": "Mettre à jour le rôle",
+    "createRoleNow": "Créer le rôle maintenant",
+    "permissionNames": {
+      "VIEW_CALLS": "Voir les appels",
+      "ANALYZE_CALLS": "Analyser les appels",
+      "DELETE_CALLS": "Supprimer les appels",
+      "DOWNLOAD_REPORTS": "Télécharger les rapports",
+      "VIEW_TEAMS": "Voir les équipes",
+      "MANAGE_TEAMS": "Gérer les équipes",
+      "VIEW_ANALYTICS": "Voir les analyses",
+      "VIEW_QA_TEMPLATES": "Voir les modèles QA",
+      "MANAGE_QA_TEMPLATES": "Gérer les modèles QA",
+      "MANAGE_USERS": "Gérer les utilisateurs",
+      "MANAGE_ROLES": "Gérer les rôles",
+      "MANAGE_ORGANIZATIONS": "Gérer les organisations",
+      "VIEW_PROMISES": "Voir les promesses",
+      "MANAGE_PROMISES": "Gérer les promesses",
+      "VIEW_BENCHMARKING": "Voir les références"
+    }
+  },
+  "qa": {
+    "title": "Paramètres QA",
+    "createParameter": "Créer un paramètre",
+    "parameterName": "Nom du paramètre",
+    "category": "Catégorie",
+    "weight": "Poids",
+    "noParameters": "Aucun paramètre trouvé"
+  },
+  "onboarding": {
+    "title": "Intégration",
+    "step1": "Informations sur l'entreprise",
+    "step2": "Configuration de l'équipe",
+    "step3": "Révision",
+    "organizationName": "Nom de l'organisation",
+    "industry": "Industrie",
+    "size": "Taille de l'organisation"
+  },
+  "sidebar": {
+    "insights": "Aperçus",
+    "salesDashboard": "Tableau de bord des ventes",
+    "callAnalysis": "Analyse des appels",
+    "workflow": "Flux de travail",
+    "promises": "Promesses",
+    "management": "Gestion",
+    "teams": "Équipes",
+    "userMgmt": "Gestion des utilisateurs",
+    "benchmarking": "Références",
+    "roles": "Rôles",
+    "qaTemplates": "Modèles QA",
+    "qaParameters": "Paramètres QA",
+    "businessProfile": "Profil de l'entreprise",
+    "platform": "Plateforme",
+    "organizations": "Organisations",
+    "compliance": "Conformité MiFID"
+  },
+  "compliance": {
+    "title": "Tableau de bord de conformité MiFID",
+    "subtitle": "Surveiller et gérer la conformité réglementaire de votre organisation",
+    "startDate": "Date de début",
+    "endDate": "Date de fin",
+    "generateReport": "Générer un rapport",
+    "totalCalls": "Total des appels",
+    "compliantCalls": "Appels conformes",
+    "complianceRate": "Taux de conformité",
+    "ruleStatistics": "Statistiques des règles de conformité",
+    "passRate": "Taux de réussite",
+    "total": "Total",
+    "pass": "Réussi",
+    "fail": "Échoué",
+    "na": "N/A",
+    "noReport": "Aucun rapport de conformité",
+    "noReportDesc": "Sélectionnez une plage de dates et générez un rapport de conformité",
+    "suitabilityAssessment": "Évaluation de l'adéquation",
+    "bestExecution": "Meilleure exécution",
+    "clientCategorization": "Catégorisation du client",
+    "overallStatus": "Statut global",
+    "runComplianceCheck": "Exécuter la vérification de conformité",
+    "allRequirementsMet": "Toutes les exigences MiFID sont respectées",
+    "someRequirementsMissing": "Certaines exigences MiFID manquent",
+    "complianceNotVerified": "Conformité MiFID non vérifiée",
+    "verified": "VÉRIFIÉ",
+    "notVerified": "NON VÉRIFIÉ",
+    "notSet": "NON DÉFINI",
+    "compliant": "CONFORME",
+    "partial": "PARTIEL",
+    "nonCompliant": "NON CONFORME"
+  },
+  "landing": {
+    "overview": "Accueil",
+    "featuresNav": "Fonctionnalités",
+    "performance": "Performance",
+    "industries": "Industries",
+    "contactNav": "Contact",
+    "tagline": "Analyses d'appels alimentées par l'IA",
+    "hero": {
+      "title": "Transformez vos analyses de communication avec l'IA",
+      "subtitle": "Surveillance, transcription et analyse en temps réel des communications sensibles. Assurez la conformité aux réglementations MiFID II & III tout en améliorant l'efficacité opérationnelle.",
+      "startTrial": "Commencer l'essai gratuit",
+      "watchDemo": "Regarder la démo",
+      "dashboardPreview": "Aperçu du tableau de bord interactif"
+    },
+    "stats": {
+      "complianceAccuracy": "Précision de conformité",
+      "fasterProcessing": "Traitement plus rapide",
+      "languagesSupported": "Langues prises en charge",
+      "costReduction": "Réduction des coûts"
+    },
+    "about": {
+      "title": "Qui nous sommes",
+      "description1": "Chez SecuroSense, nous sommes à l'avant-garde de l'analyse des communications alimentée par l'IA, ayant développé diverses solutions sophistiquées, y compris des systèmes d'analyse de sécurité et de conformité qui font partie intégrante de l'écosystème sécurisé de Securotek.",
+      "description2": "Avec un accent sur les réglementations MiFID II & III, notre solution permet aux institutions financières, aux courtiers en valeurs mobilières, aux compagnies d'assurance et aux sociétés de gestion de patrimoine d'assurer la conformité, d'atténuer les risques et d'améliorer l'efficacité opérationnelle."
+    },
+    "contact": {
+      "title": "Contactez-nous",
+      "landline": "TELEPHONE",
+      "email": "E-MAIL",
+      "website": "SITE WEB",
+      "quickResponse": "Réponse rapide",
+      "quickResponseDesc": "Obtenez une réponse dans les 24 heures. Notre équipe est prête à vous aider à transformer vos compétences en communication.",
+      "scheduleDemo": "Planifier une démo"
+    },
+    "features": {
+      "title": "Pourquoi utiliser SecuroSense",
+      "multilingual": {
+        "title": "Support multilingue",
+        "desc": "Nous offrons l'analyse des appels et des conversations, à la fois textuelles et vocales, répondant à un public international."
+      },
+      "textVoice": {
+        "title": "Chat texte et vocal",
+        "desc": "Facilitez la communication instantanée via des canaux texte et vocaux, améliorant l'engagement client."
+      },
+      "efficiency": {
+        "title": "Amélioration de l'efficacité",
+        "desc": "Optimisez le temps en naviguant 20 minutes de conversation en seulement 1 minute, économisant ainsi temps et ressources."
+      },
+      "feedback": {
+        "title": "Retour cohérent",
+        "desc": "Atteignez 90% de précision dans les commentaires pour soutenir des décisions éclairées et des améliorations de performance."
+      },
+      "scoring": {
+        "title": "Notation personnalisable",
+        "desc": "Adaptez notre système d'évaluation pour répondre aux exigences de votre entreprise pour une évaluation précise."
+      },
+      "insights": {
+        "title": "Informations en temps réel",
+        "desc": "Donnez à votre équipe des informations alimentées par l'IA en temps réel pour améliorer les interactions client."
+      }
+    },
+    "languageCoverage": {
+      "title": "Couverture linguistique mondiale",
+      "description": "SecuroSense prend en charge plus de 50 langues avec une précision de pointe dans l'industrie. Notre IA est formée sur des modèles linguistiques divers pour assurer des performances cohérentes dans toutes les langues principales."
+    }
+  },
+  "featuresPage": {
+    "brandTagline": "Intelligence IA pour QA et conformité",
+    "nav": {
+      "home": "Accueil",
+      "features": "Fonctionnalités"
+    },
+    "hero": {
+      "kicker": "Capacités de la plateforme",
+      "title": "Une intelligence d'appel de niveau entreprise pour la qualité, le coaching et la conformité.",
+      "subtitle": "SecuroSense combine la transcription IA, l'analyse multilingue, les workflows réglementaires et les contrôles basés sur les rôles dans un espace de travail sécurisé pour les équipes opérationnelles.",
+      "watchProductDemo": "Voir la démo produit"
+    },
+    "cards": {
+      "aiCallAnalysis": {
+        "title": "Analyse d'appels par IA",
+        "desc": "Analysez automatiquement les conversations avec l'IA pour extraire des insights qualité, des tendances agent et des priorites de coaching."
+      },
+      "riskDetection": {
+        "title": "Detection des risques",
+        "desc": "Detectez rapidement les risques de conformite et les signaux de conversation critiques, incluant ecarts de divulgation et escalades."
+      },
+      "complianceMonitoring": {
+        "title": "Surveillance de la conformite",
+        "desc": "Supervisez en continu les appels selon les regles qualite et reglementaires pour agir rapidement sur les exceptions."
+      },
+      "operationsDashboards": {
+        "title": "Tableaux de bord operationnels",
+        "desc": "Offrez aux equipes operations et leadership une visibilite en temps reel sur volumes, qualite, performance et etat des workflows."
+      },
+      "arabicSupport": {
+        "title": "Support arabe (extensible a d'autres langues egalement)",
+        "desc": "Support natif de l'analyse et du reporting en arabe, avec une architecture prevue pour s'etendre a d'autres langues."
+      },
+      "callAnalysisReport": {
+        "title": "Rapport d'analyse d'appel",
+        "desc": "Generez des rapports structures avec resume, points cles, alertes de risque et recommandations de suivi."
+      },
+      "roleBasedMultiTenantAccess": {
+        "title": "Accès multi-tenant basé sur les rôles",
+        "desc": "Isolez les donnees par tenant avec des permissions fines selon les roles pour admins, managers, auditeurs et agents."
+      },
+      "secureDataManagement": {
+        "title": "Gestion securisee des donnees",
+        "desc": "Protegez les donnees sensibles via stockage securise, controles d'acces, politiques de gouvernance et retention."
+      },
+      "smartAlertsNotifications": {
+        "title": "Alertes et notifications intelligentes",
+        "desc": "Declenchez des alertes et notifications operationnelles en temps utile pour les evenements critiques, risques de conformite et exceptions de workflow."
+      }
+    },
+    "security": {
+      "title": "Sécurité et gouvernance",
+      "items": {
+        "item1": "Authentification JWT et flux de jetons de rafraîchissement",
+        "item2": "Chiffrement des champs sensibles (PII) au repos",
+        "item3": "Limitation du débit des requêtes pour API et uploads",
+        "item4": "Filtrage des données par organisation et middleware de permissions",
+        "item5": "Politiques de rétention des données et endpoints de nettoyage"
+      }
+    },
+    "delivery": {
+      "title": "Livraison et intégration",
+      "items": {
+        "item1": "Documentation Swagger API pour une intégration rapide",
+        "item2": "Flux d'upload direct avec endpoints de lecture",
+        "item3": "Pipelines d'ingestion manuels ou planifiés",
+        "item4": "Rapports d'analyse PDF générés automatiquement",
+        "item5": "Configuration back-office pour rôles, équipes, modèles et organisations"
+      }
+    },
+    "bottomCta": {
+      "title": "Prêt a voir SecuroSense en action ?",
+      "subtitle": "Explorez la vue d'ensemble de la plateforme ou démarrez votre essai pour activer l'intelligence IA de QA, conformité et performance.",
+      "backHome": "Retour a l'accueil"
+    }
+  },
+  "performancePage": {
+      "hero": {
+        "kicker": "Intelligence de performance",
+        "title": "Suivez revenus, qualité et résultats de coaching dans une vue mesurable.",
+        "subtitle": "Les analyses de performance SecuroSense combinent ventes, qualité agent et indicateurs de conformité pour permettre des décisions rapides et fiables."
+      },
+      "kpis": {
+        "complianceAccuracy": "Précision de conformité",
+        "processingSpeed": "Traitement plus rapide",
+        "languageCoverage": "Langues prises en charge",
+        "costReduction": "Réduction des coûts"
+      },
+      "platform": {
+        "title": "Performance concue pour les environnements a fort volume",
+        "paragraph1": "SecuroSense est concu pour fonctionner dans des environnements de communication a fort volume ou vitesse, precision et fiabilite sont critiques.",
+        "paragraph2": "La plateforme traite des milliers de communications simultanement tout en maintenant une haute precision de transcription et une latence minimale. Son architecture evolutive permet aux organisations d'etendre les capacites de monitoring sans compromettre la performance systeme.",
+        "highlightsTitle": "Points forts de performance",
+        "highlights": {
+          "item1": "Traitement en temps reel des communications vocales",
+          "item2": "Modeles de transcription IA haute precision",
+          "item3": "Analytique et alertes a faible latence",
+          "item4": "Infrastructure evolutive prete pour le cloud",
+          "item5": "Securite et fiabilite de niveau entreprise"
+        },
+        "paragraph3": "SecuroSense permet aux organisations d'analyser les donnees de communication rapidement, precisement et en toute securite, meme dans des environnements operationnels a trafic eleve."
+      },
+      "cards": {
+        "sales": {
+          "title": "Performance commerciale",
+          "desc": "Surveillez revenu total, affaires conclues et tendances de conversion avec des périodes configurables et un filtrage par organisation."
+        },
+        "agent": {
+          "title": "Métriques de qualité agent",
+          "desc": "Comparez volume d'appels, scores QA et taux de closing par agent pour identifier les meilleurs profils et les axes de coaching."
+        },
+        "sentiment": {
+          "title": "Sentiment et santé conversationnelle",
+          "desc": "Analysez les tendances positives, neutres et négatives pour détecter les frictions et améliorer les résultats clients."
+        },
+        "team": {
+          "title": "Benchmark des équipes",
+          "desc": "Visualisez contribution au revenu et productivité par équipe afin d'équilibrer la charge et reproduire les bonnes pratiques."
+        },
+        "compliance": {
+          "title": "Suivi des signaux de conformité",
+          "desc": "Combinez les indicateurs MiFID avec les métriques opérationnelles pour réduire le risque réglementaire sans sacrifier la performance."
+        },
+        "reporting": {
+          "title": "Reporting actionnable",
+          "desc": "Utilisez rapports téléchargeables et vues dashboard pour aligner direction, QA et équipes terrain sur les priorités hebdomadaires."
+        }
+      },
+      "dataSources": {
+        "title": "Sources de données en direct dans cette application",
+        "subtitle": "Ces endpoints alimentent l'expérience de performance sur les tableaux de ventes, d'analyse et de coaching.",
+        "stats": "Totaux KPI agrégés tels que revenus et résultats des deals.",
+        "team": "Répartition revenus et productivité par équipe.",
+        "distribution": "Répartition des revenus et des sources pour l'analyse de tendance.",
+        "agents": "Scores agent, volume, mix de sentiment et taux de closing."
+      },
+      "bottomCta": {
+        "title": "Transformez les insights en croissance mesurable.",
+        "subtitle": "Passez des appels bruts à un moteur de performance reproductible avec analyse IA, contexte conformité et coaching équipe."
+      }
+    },
+  "industriesPage": {
+    "hero": {
+      "kicker": "Industries que nous servons",
+      "title": "Concu pour les entreprises reglementees a forte intensite conversationnelle.",
+      "subtitle": "SecuroSense est pense pour les organisations ou qualite d'appel, conformite et coaching impactent directement revenus, risque et confiance client."
+    },
+    "cards": {
+      "wealth": {
+        "title": "Gestion de patrimoine et d'actifs",
+        "desc": "Accompagnez les equipes de conseil avec l'intelligence d'appel, le suivi de l'adequation et des insights de coaching pour ameliorer les resultats clients."
+      },
+      "brokerage": {
+        "title": "Courtage et valeurs mobilieres",
+        "desc": "Supervisez des appels de vente et de conseil a fort volume avec QA structuree et controles reglementaires sur des equipes distribuees."
+      },
+      "insurance": {
+        "title": "Compagnies d'assurance",
+        "desc": "Renforcez la qualite des appels de souscription et de vente avec adherence script, gestion des objections et scoring de conformite."
+      },
+      "banking": {
+        "title": "Banque de detail et privee",
+        "desc": "Suivez qualite de service, comportement de conversion et signaux de risque sur les equipes agence, telephone et relation client."
+      },
+      "fintech": {
+        "title": "Fintech et plateformes digitales",
+        "desc": "Faites evoluer rapidement vos operations QA avec analyse automatisee, support multilingue et tableaux de performance."
+      },
+      "contactCenters": {
+        "title": "Centres de contact entreprise",
+        "desc": "Ameliorez la constance des agents, reduisez les escalades et obtenez des gains de qualite mesurables via des boucles de feedback pilotees par l'IA."
+      }
+    },
+    "bottomCta": {
+      "title": "Besoin d'un plan de deploiement par industrie ?",
+      "subtitle": "Demarrez avec un pilote et alignez vos besoins QA, conformite et coaching sur un modele de deploiement adapte."
+    }
+  },
+  "contactPage": {
+    "hero": {
+      "kicker": "Contact",
+      "title": "Parlez avec notre equipe.",
+      "subtitle": "Partagez vos objectifs et nous vous aiderons a definir la configuration SecuroSense adaptee a vos besoins QA, conformite et performance."
+    },
+    "details": {
+      "title": "Coordonnees",
+      "emailLabel": "Email",
+      "responseLabel": "Temps de reponse",
+      "responseValue": "Generalement sous 24 heures",
+      "noteLabel": "Ideal pour",
+      "noteValue": "Demandes de demo, planification onboarding et discussions de deploiement entreprise"
+    },
+    "form": {
+      "title": "Envoyez-nous un message",
+      "subtitle": "Remplissez le formulaire et votre application email s'ouvrira avec un brouillon pre-rempli pour notre equipe.",
+      "name": "Nom complet",
+      "email": "Email professionnel",
+      "company": "Entreprise",
+      "subject": "Objet",
+      "message": "Message",
+      "submit": "Envoyer le message",
+      "requiredError": "Veuillez renseigner le nom, l'email et le message.",
+      "defaultSubject": "Demande de contact",
+      "successHint": "Ouverture de votre application email avec un message pre-rempli..."
+    }
+  },
+  "callAnalysis": {
+    "title": "Analyse des appels",
+    "subtitle": "Téléchargez et examinez les transcriptions d'appels et les analyses IA",
+    "selectOrganization": "Sélectionner l'organisation",
+    "allOrganizations": "Toutes les organisations",
+    "uploadNewRecording": "Télécharger un nouvel enregistrement",
+    "noAgents": "Aucun agent créé pour le moment",
+    "addFirstAgent": "Ajoutez votre premier agent",
+    "upload": "Télécharger",
+    "uploading": "Téléchargement en cours...",
+    "selectFiles": "Sélectionner des fichiers",
+    "dragDrop": "Glissez-déposez les fichiers ici",
+    "or": "ou",
+    "browse": "Parcourir",
+    "cancel": "Annuler",
+    "close": "Fermer",
+    "viewDetails": "Voir les détails",
+    "downloadPdf": "Télécharger PDF",
+    "addInteraction": "Ajouter une interaction",
+    "viewCall": "Voir l'appel",
+    "viewTranscript": "Voir la transcription",
+    "noCalls": "Aucun appel",
+    "noCallsDesc": "Commencez par télécharger votre premier enregistrement",
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "success": "Succès",
+    "failed": "Échoué"
+  },
+  "agent": {
+    "title": "Gestion des utilisateurs",
+    "subtitle": "Surveillez et gérez les membres de votre équipe et les agents performants",
+    "addUser": "Ajouter un utilisateur +",
+    "createNewUser": "Créer un nouvel utilisateur",
+    "subtitleModal": "Configurer l'accès au compte pour votre nouveau membre d'équipe",
+    "teamAssignment": "Affectation d'équipe",
+    "selectTeam": "Sélectionner une équipe",
+    "role": "Rôle",
+    "selectRole": "Sélectionner un rôle",
+    "fullName": "Nom complet",
+    "emailAddress": "Adresse e-mail",
+    "password": "Mot de passe",
+    "viewPerformance": "Voir la performance",
+    "noAgents": "Aucun agent créé pour le moment",
+    "addFirstAgent": "Ajoutez votre premier agent",
+    "user": "Utilisateur",
+    "noTeam": "Pas d'équipe",
+    "create": "Créer",
+    "cancel": "Annuler"
+  },
+  "promise": {
+    "title": "Gestion des promesses",
+    "subtitle": "Suivez et gérez les promesses faites aux clients",
+    "createPromise": "Créer une promesse",
+    "promiseText": "Texte de la promesse",
+    "dueDate": "Date d'échéance",
+    "status": "Statut",
+    "pending": "En attente",
+    "fulfilled": "Accomplie",
+    "overdue": "En retard",
+    "noPromises": "Aucune promesse",
+    "addFirstPromise": "Ajoutez votre première promesse"
+  },
+  "benchmarking": {
+    "title": "Références",
+    "subtitle": "Comparez la performance des agents par rapport aux références",
+    "selectAgent": "Sélectionner un agent",
+    "selectMetric": "Sélectionner une métrique",
+    "averageScore": "Score moyen",
+    "totalCalls": "Total des appels",
+    "complianceRate": "Taux de conformité"
+  },
+  "qaTemplate": {
+    "title": "Modèles QA",
+    "createTemplate": "Créer un modèle",
+    "templateName": "Nom du modèle",
+    "description": "Description",
+    "industry": "Industrie",
+    "parameters": "Paramètres",
+    "noTemplates": "Aucun modèle",
+    "createFirstTemplate": "Créez votre premier modèle"
+  },
+  "category": {
+    "title": "Gestion des catégories",
+    "createCategory": "Créer une catégorie",
+    "categoryName": "Nom de la catégorie",
+    "noCategories": "Aucune catégorie",
+    "createFirstCategory": "Créez votre première catégorie"
+  },
+  "errors": {
+    "generic": "Une erreur s'est produite",
+    "network": "Erreur réseau",
+    "unauthorized": "Non autorisé",
+    "forbidden": "Interdit",
+    "notFound": "Non trouvé",
+    "serverError": "Erreur serveur",
+    "validation": "Erreur de validation"
+  },
+  "success": {
+    "saved": "Enregistré avec succès",
+    "created": "Créé avec succès",
+    "updated": "Mis à jour avec succès",
+    "deleted": "Supprimé avec succès",
+    "uploaded": "Téléchargé avec succès"
+  }
+}
+

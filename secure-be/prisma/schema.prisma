@@ -1,0 +1,461 @@
+generator client {
+  provider   = "prisma-client-js"
+  engineType = "binary"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id             Int              @id @default(autoincrement())
+  email          String           @unique
+  password       String
+  name           String?
+  nameAr         String?          @db.Text
+  language       String           @default("en") // Language preference: en, ar, fr
+  roleId         Int? // Foreign key to Role
+  role           Role?            @relation(fields: [roleId], references: [id])
+  teamId         Int?
+  team           Team?            @relation(fields: [teamId], references: [id])
+  organizationId Int?
+  organization   Organization?    @relation(fields: [organizationId], references: [id])
+  promises       Promise[]
+  permissions    UserPermission[] // Extra permissions beyond role
+  refreshTokens  RefreshToken[]
+  auditLogs      AuditLog[]
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
+
+  @@index([roleId])
+}
+
+model Team {
+  id             Int              @id @default(autoincrement())
+  name           String
+  organizationId Int?
+  organization   Organization?    @relation(fields: [organizationId], references: [id])
+  users          User[]
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
+}
+
+model Category {
+  id        Int       @id @default(autoincrement())
+  name      String
+  promises  Promise[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model Promise {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String?
+  status      String   @default("PENDING") // PENDING, FULFILLED, BROKEN
+  dueDate     DateTime
+  userId      Int
+  user        User     @relation(fields: [userId], references: [id])
+  categoryId  Int
+  category    Category @relation(fields: [categoryId], references: [id])
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Lead {
+  id            Int      @id @default(autoincrement())
+  customerName  String?
+  customerNameAr String? @db.Text
+  customerPhone String? // Encrypted field
+  status        String   @default("NEW") // NEW, IN_PROGRESS, CLOSED
+  calls         Call[]
+  clientCategorization ClientCategorization? // Client categorization for MiFID
+  suitabilityAssessments SuitabilityAssessment[] // Suitability assessments
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model Call {
+  id             Int           @id @default(autoincrement())
+  leadId         Int?
+  lead           Lead?         @relation(fields: [leadId], references: [id])
+  organizationId Int?
+  organization   Organization? @relation(fields: [organizationId], references: [id])
+  agentId        Int? // Optional linkage to a user/agent
+  agentName      String? // Name of the agent for this specific recording
+  agentNameAr    String?       @db.Text
+  customerName   String? // Redundant but kept for compatibility/quick access
+  customerNameAr String?       @db.Text
+  customerPhone  String? // Encrypted field (AES-256-GCM)
+  duration       Int // in seconds
+  recordingUrl   String?
+  transcript     String?       @db.Text
+  language       String? // Detected or specified language
+  timestamp      DateTime      @default(now())
+  
+  // Recording Consent (MiFID II Article 16(7) Compliance)
+  consentObtained    Boolean   @default(false) // Was recording consent obtained?
+  consentTimestamp   DateTime? // When was consent obtained?
+  consentMethod      String?   // "verbal", "written", "electronic"
+  
+  // Compliance Fields
+  complianceStatus Json? // Overall compliance status
+  regulatoryFlags String[]     @default([]) // Flags for regulatory issues
+  encryptedFields Json? // Encrypted sensitive data
+  analysis       CallAnalysis?
+  complianceChecks ComplianceCheck[] // Compliance check results
+  transactionRecord TransactionRecord? // Transaction record for MiFID reporting
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+
+  // Performance Indexes
+  @@index([timestamp])
+  @@index([organizationId])
+  @@index([agentName])
+  @@index([organizationId, timestamp])
+  @@index([consentObtained])
+}
+
+model CallAnalysis {
+  id               Int      @id @default(autoincrement())
+  callId           Int      @unique
+  call             Call     @relation(fields: [callId], references: [id])
+  sentiment        String? // POSITIVE, NEGATIVE, NEUTRAL
+  keywords         String[]
+  topics           String[]
+  actionItems      String[]
+  summary          String?  @db.Text
+  score            Int? // 0-100
+  callType         String?  @default("Discovery") // Discovery, Pitch, Follow-up, Closing, etc.
+  wasDealClosed    Boolean  @default(false)
+  dealValue        Decimal? @db.Decimal(10, 2) // Revenue from this call
+  agentDetails     Json? // { name: string, role: string, company: string, painPoints: string[] }
+  coachingTips     String?  @db.Text
+  objections       Json? // string[]
+  qaResults        Json? // { parameter: string, status: 'PASS' | 'FAIL' | 'N/A', notes: string }[]
+  processingTimeMs Int? // Time taken to process this call
+  // MiFID Compliance Fields
+  mifidCompliance  Json? // MiFID compliance check results
+  suitabilityScore Int? // 0-100 suitability assessment score
+  bestExecutionCheck Boolean? @default(false) // Best execution verified
+  clientCategory   String? // RETAIL, PROFESSIONAL, ELIGIBLE_COUNTERPARTY
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  // Performance Indexes for Sales & Compliance Queries
+  @@index([wasDealClosed])
+  @@index([callType])
+  @@index([sentiment])
+  @@index([wasDealClosed, callType])
+}
+
+// ============================================
+// RBAC & Security Models
+// ============================================
+
+model Permission {
+  id          Int              @id @default(autoincrement())
+  name        String           @unique // VIEW_CALLS, ANALYZE_CALLS, MANAGE_USERS, MANAGE_TEAMS, etc.
+  description String?
+  category    String // CALLS, TEAMS, USERS, SETTINGS, REPORTS
+  users       UserPermission[] // Users with this permission directly
+  roles       RolePermission[] // Roles that have this permission
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+}
+
+model UserPermission {
+  id           Int        @id @default(autoincrement())
+  userId       Int
+  user         User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  permissionId Int
+  permission   Permission @relation(fields: [permissionId], references: [id], onDelete: Cascade)
+  grantedAt    DateTime   @default(now())
+  grantedBy    Int? // UserId who granted this permission
+
+  @@unique([userId, permissionId])
+}
+
+model RefreshToken {
+  id        Int       @id @default(autoincrement())
+  token     String    @unique
+  userId    Int
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  createdAt DateTime  @default(now())
+  revokedAt DateTime?
+
+  @@index([userId])
+  @@index([token])
+}
+
+model AuditLog {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  user      User     @relation(fields: [userId], references: [id])
+  action    String // LOGIN, VIEW_CALL, DOWNLOAD_PDF, DELETE_DATA, ANALYZE_CALL, etc.
+  resource  String? // Call:123, Lead:456, User:789
+  details   Json? // Additional context
+  ipAddress String?
+  userAgent String?
+  timestamp DateTime @default(now())
+
+  @@index([userId, timestamp])
+  @@index([action, timestamp])
+  @@index([resource])
+}
+
+// ============================================
+// Role System (Roles with Multiple Permissions)
+// ============================================
+
+model Role {
+  id             Int              @id @default(autoincrement())
+  name           String // Admin, Agent, QA Manager, Team Lead, Viewer
+  description    String?
+  isSystem       Boolean          @default(false) // System roles cannot be deleted
+  organizationId Int? // null = system/global role, number = organization-specific role
+  organization   Organization?    @relation(fields: [organizationId], references: [id])
+  permissions    RolePermission[]
+  users          User[]
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
+
+  @@unique([name, organizationId]) // Role name must be unique per organization
+}
+
+model RolePermission {
+  id           Int        @id @default(autoincrement())
+  roleId       Int
+  role         Role       @relation(fields: [roleId], references: [id], onDelete: Cascade)
+  permissionId Int
+  permission   Permission @relation(fields: [permissionId], references: [id], onDelete: Cascade)
+  grantedAt    DateTime   @default(now())
+
+  @@unique([roleId, permissionId])
+}
+
+// ============================================
+// QA Template System (Customizable Scoring)
+// ============================================
+
+model QATemplate {
+  id             Int              @id @default(autoincrement())
+  name           String
+  nameAr         String?          @db.Text
+  description    String?          @db.Text
+  industry       String // Insurance, Banking, Retail, Healthcare, etc.
+  isActive       Boolean          @default(true)
+  parameters     Json // [{ name, description, passCriteria, weight }]
+  organizationId Int?
+  organization   Organization?    @relation(fields: [organizationId], references: [id])
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
+  createdBy      Int? // UserId who created this template
+
+  @@index([industry])
+}
+
+model GlobalQAParameter {
+  id             Int           @id @default(autoincrement())
+  name           String
+  nameAr         String?       @db.Text
+  description    String
+  passCriteria   String
+  industry       String        @default("General") // Industry specific or General
+  weight         Int           @default(1)
+  isActive       Boolean       @default(true)
+  organizationId Int?
+  organization   Organization? @relation(fields: [organizationId], references: [id])
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+
+  @@index([industry])
+}
+
+// ============================================
+// Performance & Usage Metrics
+// ============================================
+
+model ProcessingMetrics {
+  id                 Int      @id @default(autoincrement())
+  callId             Int?
+  operation          String // TRANSCRIPTION, ANALYSIS, PDF_GENERATION
+  durationMs         Int // Processing time in milliseconds
+  audioLengthSeconds Int? // For transcription: original audio length
+  success            Boolean  @default(true)
+  errorMessage       String?  @db.Text
+  aiProvider         String? // GEMINI, OPENAI, etc.
+  aiModel            String? // gemini-flash-latest, gpt-4, etc.
+  promptTokens       Int?
+  completionTokens   Int?
+  timestamp          DateTime @default(now())
+
+  @@index([operation, timestamp])
+  @@index([callId])
+}
+
+model UsageMetrics {
+  id           Int      @id @default(autoincrement())
+  teamId       Int?
+  userId       Int?
+  audioMinutes Float // Total audio minutes processed
+  apiCalls     Int      @default(0)
+  storageBytes BigInt   @default(0)
+  month        String // YYYY-MM format
+  cost         Decimal? @db.Decimal(10, 2)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@unique([teamId, month])
+  @@unique([userId, month])
+  @@index([month])
+}
+
+model Organization {
+  id                 Int                 @id @default(autoincrement())
+  name               String
+  industry           String
+  size               String?
+  // Additional Business Information
+  address            String?             @db.Text
+  city               String?
+  state              String?
+  country            String?
+  postalCode         String?
+  phone              String?
+  email              String?
+  website            String?
+  timezone           String?             @default("UTC")
+  taxId              String? // Tax ID / VAT Number
+  registrationNumber String? // Business Registration Number
+  description        String?             @db.Text // Business description
+  foundedYear        Int? // Year the business was founded
+  // Regulatory & Compliance Fields
+  regulatoryFramework String[]           @default([]) // ["MiFID_II", "MiFID_III", "GDPR", "PCI_DSS"]
+  complianceOfficerEmail String? // Email of compliance officer
+  mifidEnabled       Boolean             @default(false) // Enable MiFID compliance features
+  users              User[]
+  teams              Team[]
+  calls              Call[]
+  qaTemplates        QATemplate[]
+  globalQAParameters GlobalQAParameter[]
+  roles              Role[] // Organization-specific roles
+  complianceRules    ComplianceRule[] // MiFID compliance rules
+  dataRetentionPolicies DataRetentionPolicy[] // Data retention policies
+  createdAt          DateTime            @default(now())
+  updatedAt          DateTime            @updatedAt
+}
+
+// ============================================
+// MiFID II & III Compliance Models
+// ============================================
+
+model ComplianceRule {
+  id             Int              @id @default(autoincrement())
+  name           String // e.g., "MiFID II - Suitability Assessment"
+  description    String?          @db.Text
+  regulation     String // MiFID_II, MiFID_III, GDPR, PCI_DSS
+  severity       String           @default("MEDIUM") // CRITICAL, HIGH, MEDIUM, LOW
+  requiredChecks Json // Array of required compliance checks
+  isActive       Boolean          @default(true)
+  organizationId Int? // null = global rule, number = organization-specific
+  organization   Organization?    @relation(fields: [organizationId], references: [id])
+  complianceChecks ComplianceCheck[] // Compliance checks using this rule
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
+
+  @@index([regulation])
+  @@index([organizationId])
+  @@index([isActive])
+}
+
+model ComplianceCheck {
+  id             Int            @id @default(autoincrement())
+  callId         Int
+  call           Call           @relation(fields: [callId], references: [id], onDelete: Cascade)
+  ruleId         Int
+  rule           ComplianceRule @relation(fields: [ruleId], references: [id])
+  status         String         @default("N/A") // PASS, FAIL, N/A
+  details        Json? // Detailed compliance check results
+  checkedAt      DateTime       @default(now())
+  checkedBy      Int? // UserId who performed the check (null = automated)
+
+  @@index([callId])
+  @@index([ruleId])
+  @@index([status])
+  @@index([checkedAt])
+}
+
+model ClientCategorization {
+  id               Int      @id @default(autoincrement())
+  leadId           Int      @unique
+  lead             Lead     @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  category         String   // RETAIL, PROFESSIONAL, ELIGIBLE_COUNTERPARTY
+  assessmentDate   DateTime @default(now())
+  assessmentDetails Json? // Detailed categorization assessment
+  assessedBy       Int? // UserId who performed categorization
+  notes            String?  @db.Text
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  @@index([category])
+  @@index([assessmentDate])
+}
+
+model SuitabilityAssessment {
+  id                Int      @id @default(autoincrement())
+  callId            Int? // Optional: link to specific call
+  leadId            Int
+  lead              Lead     @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  riskProfile       String? // CONSERVATIVE, MODERATE, AGGRESSIVE
+  investmentObjectives Json? // Investment objectives assessment
+  knowledgeExperience Json? // Knowledge and experience assessment
+  financialSituation Json? // Financial situation assessment
+  assessmentResult  Json? // Overall assessment result
+  assessedBy        Int? // UserId who performed assessment
+  assessmentDate    DateTime @default(now())
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  @@index([leadId])
+  @@index([callId])
+  @@index([assessmentDate])
+}
+
+model TransactionRecord {
+  id              Int      @id @default(autoincrement())
+  callId          Int      @unique
+  call            Call     @relation(fields: [callId], references: [id], onDelete: Cascade)
+  transactionType String? // BUY, SELL, SWAP, etc.
+  instrumentType  String? // EQUITY, BOND, DERIVATIVE, etc.
+  executionVenue  String? // Execution venue name
+  timestamp       DateTime @default(now())
+  value           Decimal? @db.Decimal(15, 2)
+  currency        String?  @default("USD")
+  reportingStatus String   @default("PENDING") // PENDING, REPORTED, FAILED
+  reportedAt      DateTime?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([timestamp])
+  @@index([reportingStatus])
+  @@index([transactionType])
+}
+
+model DataRetentionPolicy {
+  id              Int           @id @default(autoincrement())
+  organizationId  Int
+  organization    Organization  @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  dataType        String // CALLS, TRANSCRIPTS, RECORDINGS, ANALYSIS, AUDIT_LOGS
+  retentionPeriodDays Int // Number of days to retain data
+  autoDeleteEnabled Boolean      @default(false)
+  lastCleanupDate DateTime?
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+
+  @@unique([organizationId, dataType])
+  @@index([organizationId])
+  @@index([dataType])
+}

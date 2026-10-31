@@ -1,0 +1,33 @@
+# Build
+build/
+dist/
+
+# Dependencies
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Reports / generated
+reports/
+
+# Uploaded call recordings
+uploads/
+
+.env
+development.env
+production.env
+test.env
